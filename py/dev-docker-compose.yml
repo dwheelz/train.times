@@ -1,0 +1,12 @@
+version: "3"
+
+services:
+  py_train_times_dev:
+    build: .
+    container_name: py.train.times.dev
+    restart: always
+    volumes:
+      - "./app:/app"
+    environment:
+      TZ: "Europe/London"
+    command: tail -F anything  # keeps the container running
